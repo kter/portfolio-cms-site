@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import VueGtag from 'vue-gtag'
 
 Vue.config.productionTip = false
 
@@ -13,3 +14,9 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
+Vue.use(VueGtag, {
+  config: { id: 'UA-158905691-1' },
+  appName: 'ポートフォリオサイト',
+  pageTrackerScreenviewEnabled: true
+}, router)
