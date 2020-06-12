@@ -1,13 +1,29 @@
 <template>
   <div id="customer-page">
-    <h1>{{ page.fields.headline }}</h1>
-    <div v-html="page.fields.body"></div>
+    <div class="headline">{{ page.fields.headline }}</div>
+    <div class="contents" v-html="page.fields.body"></div>
   </div>
 </template>
 
 <style>
   ul {
     padding-inline-start: 0;
+  }
+
+  .headline {
+    font-size: 1.4em;
+    margin: 70px 0 50px;
+  }
+
+  .contents {
+    margin-bottom: 4em;
+  }
+
+  h1 {
+    margin-bottom: 20px;
+  }
+  h2:nth-of-type(1) {
+    margin-top: 35px;
   }
 </style>
 
