@@ -1,30 +1,71 @@
-# portfolio-cms-site
+# 高橋智彦のポートフォリオサイト
 
-> A Vue.js project
+魚とお茶と富士山と車と新しいもの好きエンジニアのポートフォリオサイトです。
 
-## Build Setup
+## 技術スタック
 
-``` bash
-# install dependencies
+- **Nuxt.js 3** - Vue.js ベースのフレームワーク（SPAモード）
+- **TailwindCSS** - ユーティリティファーストのCSSフレームワーク
+- **TypeScript** - 型安全な開発
+
+## 機能
+
+- レスポンシブデザイン
+- モダンなUI/UX
+- SEO最適化
+- 高速なページ読み込み
+
+## セットアップ
+
+### 必要なもの
+
+- Node.js (v18以上)
+- npm または yarn
+
+### インストール
+
+```bash
+# 依存関係のインストール
 npm install
 
-# serve with hot reload at localhost:8080
+# 開発サーバーの起動
 npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### ビルド
+
+```bash
+# 本番用ビルド
+npm run build
+
+# ビルドしたアプリケーションをプレビュー
+npm run preview
+```
+
+## コンテンツ
+
+- **Work Experience** - AWS/Linux インフラエンジニア、Ruby on Rails、JavaScript/PHP の経験
+- **Links** - Qiita、GitHub、SlideShare、LinkedIn、Blog へのリンク
+- **自作サービス** - AWS アイコンクイズ、一日一善、ｼﾝｶﾝｾﾝｽｺﾞｸｶﾀｲｱｲｽbot
+- **Certifications** - 基本情報技術者、応用情報技術者、AWS認定資格
+- **Contact** - メールアドレス、Twitter
+
+## デプロイ
+
+このプロジェクトはSPAモードで設定されているため、静的ホスティングサービス（Netlify、Vercel、GitHub Pages等）で簡単にデプロイできます。
+
+```bash
+npm run generate
+```
+
+`dist/` フォルダの内容をホスティングサービスにアップロードしてください。
+
+## カスタマイズ
+
+- `pages/index.vue` - メインページのコンテンツ
+- `assets/css/main.css` - カスタムスタイル
+- `nuxt.config.ts` - Nuxt.js の設定
+
+## ライセンス
+
+MIT License
