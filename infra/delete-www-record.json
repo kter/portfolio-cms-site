@@ -1,0 +1,18 @@
+{
+  "Comment": "Delete www CNAME record",
+  "Changes": [
+    {
+      "Action": "DELETE",
+      "ResourceRecordSet": {
+        "Name": "www.tomohiko.io.",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          {
+            "Value": "nifty-panini-781af1.netlify.com."
+          }
+        ]
+      }
+    }
+  ]
+} 

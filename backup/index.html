@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/main.css"
+        crossorigin="anonymous">
+
+                
+                <title>ポートフォリオサイト</title>
+                </head>
+                
+                <body>
+                    <div class="container">
+                        <div class="row  mb-5">
+                            <div class="col-sm">
+                                <h1>はじめまして</h1>
+                                <br />
+                                ここはソフトウェアエンジニアの高橋智彦のポートフォリオサイトです。<br />
+                                <br />
+                                <a href="portfolio.md">職務経歴書を見る</a><br />
+                                このサイトがどうやって動いているのか見る (Slideshareへのリンク)<br />
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="container">
+                        <div class="row mb-5">
+                            <div class="col-sm">
+                                <a class="twitter-timeline" data-height="600" href="https://twitter.com/kter?ref_src=twsrc%5Etfw">Tweets by kter</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            </div>
+                            <div class="col-sm">
+                                <div id="blog">
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div id="github">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <template id="github_feed">
+                      <div class="row">
+                        <ol class="feed">
+                          <a id="url" href="">
+                            <li>
+                              <span id="title" class="title"></span>
+                              <span id="description" class="content"></span>
+                              <span id="language" class="timestamp"></span>
+                              <span id="updated_at" class="timestamp"></span>
+                            </li>
+                          </a>
+                        </ol>
+                        <br>
+                      </div>
+                    </template>
+
+                    <template id="blog_feed">
+                      <div class="row">
+                        <ol class="feed">
+                          <a id="url" href="">
+                            <li>
+                              <span id="title" class="title"></span>
+                              <span id="content" class="content"></span>
+                              <span id="published" class="timestamp"></span>
+                            </li>
+                          </a>
+                        </ol>
+                        <br>
+                      </div>
+                    </template>
+
+                <script type="text/javascript">
+                  const base_url ='https://api.github.com/users/kter/repos';
+                  const params = '?sort=updated&direction=desc';
+                  const github_url = base_url + params;
+                  const display_limit = 5;
+                  const description_limit = 30;
+
+                  fetch(github_url)
+                    .then(function(response) {
+                      return response.json()
+                    })
+                    .then(function(json_response) {
+                      repository_datas = json_response.slice(0, display_limit);
+                      for (repository_data of repository_datas) {
+                        description = repository_data['description'] ? repository_data['description'].slice(0, description_limit) : 'No Description Provided.';
+
+                        let template = document.querySelector('#github_feed');
+                        let target = document.querySelector("#github");
+                        let clone = document.importNode(template.content, true);
+
+                        title_element = clone.querySelectorAll("#title");
+                        title_element[0].textContent = repository_data['name'];
+
+                        description_element = clone.querySelectorAll("#description");
+                        description_element[0].textContent = description;
+
+                        language_element = clone.querySelectorAll("#language");
+                        language_element[0].textContent = repository_data['language'];
+
+                        updated_at_element = clone.querySelectorAll("#updated_at");
+                        updated_at_element[0].textContent = repository_data['updated_at'];
+                    
+                        url_element = clone.querySelectorAll("#url");
+                        url_element[0].href = repository_data['html_url'];
+
+                        target.appendChild(clone);
+                      }
+
+                    });
+                </script>
+
+                <script type="text/javascript">
+                  const blog_base_url ='https://blog.tomohiko.io';
+                  const feed_path = '/feed.xml';
+                  const blog_url = blog_base_url + feed_path;
+                  const blog_display_limit = 5;
+                  const blog_description_limit = 50;
+
+                  fetch(blog_url)
+                    .then(function(response) {
+                      return response.text()
+                    })
+                    .then(function(xml_response) {
+                      let parser = new DOMParser();
+                      let xmlData = parser.parseFromString(xml_response, "text/xml");
+
+                      let i;
+                      for (i = 0; i <= blog_display_limit; i++) {
+                        let entry = xmlData.querySelectorAll('entry')[i];
+                        let template = document.querySelector('#blog_feed');
+                        let target = document.querySelector("#blog");
+                        let clone = document.importNode(template.content, true);
+
+                        title_element = clone.querySelectorAll("#title");
+                        title_element[0].textContent = entry.querySelector('title').textContent;
+
+                        description_element = clone.querySelectorAll("#content");
+                        description_element[0].textContent = entry.querySelector('content').textContent.replace(/(<([^>]+)>)/ig,"").slice(0, blog_description_limit);
+
+                        published_element = clone.querySelectorAll("#published");
+                        published_element[0].textContent = entry.querySelector('published').textContent;
+                    
+                        url_element = clone.querySelectorAll("#url");
+                        url_element[0].href = blog_base_url + entry.querySelector('link').getAttribute('href');
+
+                        target.appendChild(clone);
+
+                      }
+                    });
+                </script>
+                
+                </body>
+                
+                </html>
