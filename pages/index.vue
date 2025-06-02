@@ -34,71 +34,12 @@
             <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
               高橋智彦のポートフォリオ
             </h1>
-            <p class="text-xl md:text-2xl text-white max-w-3xl mx-auto drop-shadow-md">
+            <p class="text-xl md:text-2xl text-white max-w-3xl mx-auto drop-shadow-md mb-4">
               魚とお茶と富士山と車と新しいもの好きエンジニア
             </p>
-          </div>
-          
-          <div class="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-md mx-auto">
-            <h2 class="text-2xl font-bold text-gray-900 mb-2">高橋 智彦</h2>
-            <h3 class="text-lg text-gray-600 mb-2">Takahashi Tomohiko</h3>
-            <p class="text-gray-500">1991~</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="section bg-white">
-      <div class="container">
-        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">Gallery</h2>
-        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-          魚とお茶と富士山と車と新しいもの好きな日常の一コマ
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
-            <img 
-              src="/gallery-1.jpg" 
-              alt="Gallery Image 1" 
-              class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-            />
-            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300"></div>
-          </div>
-          
-          <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
-            <img 
-              src="/gallery-2.jpg" 
-              alt="Gallery Image 2" 
-              class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-            />
-            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300"></div>
-          </div>
-          
-          <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
-            <img 
-              src="/gallery-3.jpg" 
-              alt="Gallery Image 3" 
-              class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-            />
-            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300"></div>
-          </div>
-          
-          <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 md:col-span-1 lg:col-span-2">
-            <img 
-              src="/gallery-5.jpg" 
-              alt="Gallery Image 5" 
-              class="w-full h-64 lg:h-80 object-cover group-hover:scale-110 transition-transform duration-300"
-            />
-            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300"></div>
-          </div>
-          
-          <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
-            <img 
-              src="/gallery-1.jpg" 
-              alt="Gallery Image 1 (Repeated)" 
-              class="w-full h-64 lg:h-80 object-cover group-hover:scale-110 transition-transform duration-300"
-            />
-            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300"></div>
+            <p class="text-lg text-white text-opacity-90 drop-shadow-md">
+              Takahashi Tomohiko
+            </p>
           </div>
         </div>
       </div>
