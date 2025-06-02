@@ -1,22 +1,45 @@
 <template>
   <div class="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
     <!-- Hero Section -->
-    <section class="section">
-      <div class="container">
+    <section class="section relative min-h-screen flex items-center justify-center overflow-hidden">
+      <!-- Background Image Slideshow -->
+      <div class="absolute inset-0 z-0">
+        <div
+          v-for="(image, index) in galleryImages"
+          :key="image"
+          class="absolute inset-0 transition-opacity duration-1000"
+          :class="{ 'opacity-100': index === currentImageIndex, 'opacity-0': index !== currentImageIndex }"
+        >
+          <img 
+            :src="image" 
+            :alt="`Background ${index + 1}`" 
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+      </div>
+      
+      <!-- Content -->
+      <div class="container relative z-20">
         <div class="text-center">
           <div class="mb-8">
-            <div class="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-4xl font-bold">
-              TT
+            <div class="w-32 h-32 mx-auto mb-6 overflow-hidden rounded-full shadow-2xl border-4 border-white relative z-30 bg-white">
+              <img 
+                src="/profile.jpg" 
+                alt="高橋智彦のプロフィール写真" 
+                class="w-full h-full object-cover relative z-40"
+                loading="eager"
+              />
             </div>
-            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
               高橋智彦のポートフォリオ
             </h1>
-            <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+            <p class="text-xl md:text-2xl text-white max-w-3xl mx-auto drop-shadow-md">
               魚とお茶と富士山と車と新しいもの好きエンジニア
             </p>
           </div>
           
-          <div class="bg-white rounded-2xl shadow-xl p-8 max-w-md mx-auto">
+          <div class="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-md mx-auto">
             <h2 class="text-2xl font-bold text-gray-900 mb-2">高橋 智彦</h2>
             <h3 class="text-lg text-gray-600 mb-2">Takahashi Tomohiko</h3>
             <p class="text-gray-500">1991~</p>
@@ -25,8 +48,64 @@
       </div>
     </section>
 
-    <!-- Work Experience Section -->
+    <!-- Gallery Section -->
     <section class="section bg-white">
+      <div class="container">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">Gallery</h2>
+        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          魚とお茶と富士山と車と新しいもの好きな日常の一コマ
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
+            <img 
+              src="/gallery-1.jpg" 
+              alt="Gallery Image 1" 
+              class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300"></div>
+          </div>
+          
+          <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
+            <img 
+              src="/gallery-2.jpg" 
+              alt="Gallery Image 2" 
+              class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300"></div>
+          </div>
+          
+          <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
+            <img 
+              src="/gallery-3.jpg" 
+              alt="Gallery Image 3" 
+              class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300"></div>
+          </div>
+          
+          <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 md:col-span-1 lg:col-span-2">
+            <img 
+              src="/gallery-5.jpg" 
+              alt="Gallery Image 5" 
+              class="w-full h-64 lg:h-80 object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300"></div>
+          </div>
+          
+          <div class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
+            <img 
+              src="/gallery-1.jpg" 
+              alt="Gallery Image 1 (Repeated)" 
+              class="w-full h-64 lg:h-80 object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section class="section">
       <div class="container">
         <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">Work Experience</h2>
         <div class="grid md:grid-cols-3 gap-8">
@@ -61,7 +140,7 @@
     </section>
 
     <!-- Links Section -->
-    <section class="section">
+    <section class="section bg-white">
       <div class="container">
         <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">Links</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -119,7 +198,7 @@
     </section>
 
     <!-- Services Section -->
-    <section class="section bg-white">
+    <section class="section">
       <div class="container">
         <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">自作サービス</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -145,7 +224,7 @@
     </section>
 
     <!-- Certifications Section -->
-    <section class="section">
+    <section class="section bg-white">
       <div class="container">
         <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">Certifications</h2>
         <div class="max-w-4xl mx-auto">
@@ -201,13 +280,44 @@
 </template>
 
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+
+// 画像スライドショーの設定
+const galleryImages = [
+  '/gallery-1.jpg',
+  '/gallery-2.jpg',
+  '/gallery-3.jpg',
+  '/gallery-4.jpg',
+  '/gallery-5.jpg'
+]
+
+const currentImageIndex = ref(0)
+let slideInterval = null
+
+// 画像を自動で切り替える関数
+const nextImage = () => {
+  currentImageIndex.value = (currentImageIndex.value + 1) % galleryImages.length
+}
+
+// コンポーネントがマウントされたときにスライドショーを開始
+onMounted(() => {
+  slideInterval = setInterval(nextImage, 4000) // 4秒ごとに切り替え
+})
+
+// コンポーネントがアンマウントされたときにタイマーをクリア
+onUnmounted(() => {
+  if (slideInterval) {
+    clearInterval(slideInterval)
+  }
+})
+
 // メタデータの設定
 useSeoMeta({
   title: '高橋智彦のポートフォリオ',
   ogTitle: '高橋智彦のポートフォリオ',
   description: '魚とお茶と富士山と車と新しいもの好きエンジニア - AWS/Linux インフラエンジニア、Ruby on Rails、JavaScript/PHPの経験があります',
   ogDescription: '魚とお茶と富士山と車と新しいもの好きエンジニア - AWS/Linux インフラエンジニア、Ruby on Rails、JavaScript/PHPの経験があります',
-  ogImage: '/og-image.jpg',
+  ogImage: '/profile.jpg',
   twitterCard: 'summary_large_image',
 })
 </script> 
