@@ -190,10 +190,10 @@
     <section class="section bg-white">
       <div class="container">
         <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">Certifications</h2>
-        <div class="max-w-4xl mx-auto">
-          <div class="grid md:grid-cols-2 gap-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
             <div class="card">
-              <h3 class="text-lg font-bold text-gray-900 mb-4">基本情報・応用情報</h3>
+              <h3 class="text-lg font-bold text-gray-900 mb-4">国家資格</h3>
               <ul class="space-y-2 text-gray-600">
                 <li>• 基本情報技術者</li>
                 <li>• 応用情報技術者</li>
@@ -201,12 +201,86 @@
             </div>
             
             <div class="card">
-              <h3 class="text-lg font-bold text-gray-900 mb-4">AWS認定資格</h3>
-              <ul class="space-y-2 text-gray-600">
-                <li>• Solutions Architect - Associate</li>
-                <li>• Developer - Associate</li>
-                <li>• Solutions Architect - Professional</li>
-                <li>• Security – Specialty</li>
+              <h3 class="text-lg font-bold text-gray-900 mb-4">AWS認定資格 - FOUNDATIONAL <span class="text-sm font-normal text-orange-600">(2資格)</span></h3>
+              <ul class="space-y-1 text-gray-600">
+                <li class="flex items-center">
+                  <img src="/cloud-practitioner-f.png" alt="Cloud Practitioner" class="w-5 h-5 mr-2 flex-shrink-0">
+                  <span>Cloud Practitioner</span>
+                </li>
+                <li class="flex items-center">
+                  <img src="/ai-practitioner-f.png" alt="AI Practitioner" class="w-5 h-5 mr-2 flex-shrink-0">
+                  <span>AI Practitioner (Early Adopter)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="mb-8">
+            <div class="card">
+              <h3 class="text-lg font-bold text-gray-900 mb-4">AWS認定資格 - ASSOCIATE <span class="text-sm font-normal text-blue-600">(5資格)</span></h3>
+              <div class="grid md:grid-cols-2 gap-4">
+                <ul class="space-y-1 text-gray-600">
+                  <li class="flex items-center">
+                    <img src="/solution-architect-a.png" alt="Solutions Architect Associate" class="w-5 h-5 mr-2 flex-shrink-0">
+                    <span>Solutions Architect - Associate</span>
+                  </li>
+                  <li class="flex items-center">
+                    <img src="/developer-a.png" alt="Developer Associate" class="w-5 h-5 mr-2 flex-shrink-0">
+                    <span>Developer - Associate</span>
+                  </li>
+                  <li class="flex items-center">
+                    <img src="/sysops-a.png" alt="SysOps Administrator Associate" class="w-5 h-5 mr-2 flex-shrink-0">
+                    <span>SysOps Administrator - Associate</span>
+                  </li>
+                </ul>
+                <ul class="space-y-1 text-gray-600">
+                  <li class="flex items-center">
+                    <img src="/data-engineer-a.png" alt="Data Engineer Associate" class="w-5 h-5 mr-2 flex-shrink-0">
+                    <span>Data Engineer - Associate</span>
+                  </li>
+                  <li class="flex items-center">
+                    <img src="/machine-learning-a.png" alt="Machine Learning Engineer Associate" class="w-5 h-5 mr-2 flex-shrink-0">
+                    <span>Machine Learning Engineer - Associate</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="card">
+              <h3 class="text-lg font-bold text-gray-900 mb-4">AWS認定資格 - PROFESSIONAL <span class="text-sm font-normal text-purple-600">(2資格)</span></h3>
+              <ul class="space-y-1 text-gray-600">
+                <li class="flex items-center">
+                  <img src="/solution-architet-p.png" alt="Solutions Architect Professional" class="w-5 h-5 mr-2 flex-shrink-0">
+                  <span>Solutions Architect - Professional</span>
+                </li>
+                <li class="flex items-center">
+                  <img src="/devops-p.png" alt="DevOps Engineer Professional" class="w-5 h-5 mr-2 flex-shrink-0">
+                  <span>DevOps Engineer - Professional</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="card">
+              <h3 class="text-lg font-bold text-gray-900 mb-4">AWS認定資格 - SPECIALTY <span class="text-sm font-normal text-green-600">(4資格)</span></h3>
+              <ul class="space-y-1 text-gray-600">
+                <li class="flex items-center">
+                  <img src="/security-s.png" alt="Security Specialty" class="w-5 h-5 mr-2 flex-shrink-0">
+                  <span>Security – Specialty</span>
+                </li>
+                <li class="flex items-center">
+                  <img src="/advance-network-s.png" alt="Advanced Networking Specialty" class="w-5 h-5 mr-2 flex-shrink-0">
+                  <span>Advanced Networking – Specialty</span>
+                </li>
+                <li class="flex items-center">
+                  <img src="/database-s.png" alt="Database Specialty" class="w-5 h-5 mr-2 flex-shrink-0">
+                  <span>Database – Specialty</span>
+                </li>
+                <li class="flex items-center">
+                  <img src="/mahcine-larning-s.png" alt="Machine Learning Specialty" class="w-5 h-5 mr-2 flex-shrink-0">
+                  <span>Machine Learning – Specialty</span>
+                </li>
               </ul>
             </div>
           </div>
