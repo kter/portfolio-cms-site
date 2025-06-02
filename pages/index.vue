@@ -49,11 +49,11 @@
     <section class="section">
       <div class="container">
         <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">Work Experience</h2>
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div class="card">
             <div class="h-2 bg-orange-500 rounded-t-lg -mt-6 -mx-6 mb-6"></div>
             <h3 class="text-xl font-bold text-gray-900 mb-4">AWS / Linux インフラエンジニア</h3>
-            <p class="text-3xl font-bold text-orange-500 mb-2">9年</p>
+            <p class="text-3xl font-bold text-orange-500 mb-2">10年以上</p>
             <p class="text-gray-600">クラウドインフラストラクチャの設計・構築・運用</p>
           </div>
           
@@ -62,6 +62,13 @@
             <h3 class="text-xl font-bold text-gray-900 mb-4">Ruby on Rails バックエンドエンジニア</h3>
             <p class="text-3xl font-bold text-red-500 mb-2">2年</p>
             <p class="text-gray-600">Webアプリケーションのバックエンド開発</p>
+          </div>
+          
+          <div class="card">
+            <div class="h-2 bg-purple-500 rounded-t-lg -mt-6 -mx-6 mb-6"></div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">チームマネジメント</h3>
+            <p class="text-3xl font-bold text-purple-500 mb-2">3年</p>
+            <p class="text-gray-600">SREグループのマネジメント・プロジェクト管理等</p>
           </div>
           
           <div class="card">
@@ -149,17 +156,32 @@
             <p class="text-gray-600">AWSサービスのアイコンを覚えるクイズアプリ</p>
           </a>
           
-          <a href="https://itizen.tomohiko.io/" target="_blank" class="card hover:scale-105 transition-transform">
-            <div class="h-2 bg-green-400 rounded-t-lg -mt-6 -mx-6 mb-6"></div>
-            <h3 class="text-xl font-bold text-gray-900 mb-4">一日一善</h3>
-            <p class="text-gray-600">日々の良い行いを記録するアプリ</p>
-          </a>
+          <div class="card">
+            <div class="h-2 bg-indigo-400 rounded-t-lg -mt-6 -mx-6 mb-6"></div>
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-gray-900">開発者ツール（仮）</h3>
+              <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">開発中</span>
+            </div>
+            <p class="text-gray-600">開発者向け開発効率向上化ツール</p>
+          </div>
           
-          <a href="https://twitter.com/sskabot" target="_blank" class="card hover:scale-105 transition-transform">
+          <div class="card opacity-60">
+            <div class="h-2 bg-green-400 rounded-t-lg -mt-6 -mx-6 mb-6"></div>
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-gray-900 line-through">一日一善</h3>
+              <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">運用終了</span>
+            </div>
+            <p class="text-gray-600 line-through">日々の良い行いを記録するアプリ</p>
+          </div>
+          
+          <div class="card opacity-60">
             <div class="h-2 bg-blue-400 rounded-t-lg -mt-6 -mx-6 mb-6"></div>
-            <h3 class="text-xl font-bold text-gray-900 mb-4">ｼﾝｶﾝｾﾝｽｺﾞｸｶﾀｲｱｲｽbot</h3>
-            <p class="text-gray-600">新幹線の新型車両を紹介するTwitter Bot</p>
-          </a>
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-gray-900 line-through">ｼﾝｶﾝｾﾝｽｺﾞｸｶﾀｲｱｲｽbot</h3>
+              <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">運用終了</span>
+            </div>
+            <p class="text-gray-600 line-through">新幹線のカタイアイスを紹介するTwitter Bot</p>
+          </div>
         </div>
       </div>
     </section>
