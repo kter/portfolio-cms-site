@@ -156,14 +156,11 @@
             <p class="text-gray-600">AWSサービスのアイコンを覚えるクイズアプリ</p>
           </a>
           
-          <div class="card">
+          <a href="https://devtools.site/" target="_blank" class="card hover:scale-105 transition-transform">
             <div class="h-2 bg-indigo-400 rounded-t-lg -mt-6 -mx-6 mb-6"></div>
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-xl font-bold text-gray-900">開発者ツール（仮）</h3>
-              <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">開発中</span>
-            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">開発者ツール（仮）</h3>
             <p class="text-gray-600">開発者向け開発効率向上化ツール</p>
-          </div>
+          </a>
           
           <div class="card opacity-60">
             <div class="h-2 bg-green-400 rounded-t-lg -mt-6 -mx-6 mb-6"></div>
