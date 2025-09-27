@@ -286,25 +286,25 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="section bg-gray-900 text-white">
+    <section class="section bg-white">
       <div class="container">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Contact Me</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">Contact Me</h2>
         <div class="max-w-2xl mx-auto text-center">
           <div class="grid md:grid-cols-2 gap-8">
-            <a href="mailto:takahashi@tomohiko.io" class="bg-white bg-opacity-10 rounded-lg p-6 hover:bg-opacity-20 transition-all">
+            <a href="mailto:takahashi@tomohiko.io" class="card hover:scale-105 transition-transform">
               <div class="text-2xl mb-2">✉️</div>
-              <h3 class="font-bold mb-2">Email</h3>
-              <p class="text-gray-300">takahashi@tomohiko.io</p>
+              <h3 class="font-bold mb-2 text-gray-900">Email</h3>
+              <p class="text-gray-600">takahashi@tomohiko.io</p>
             </a>
-            
-            <a href="https://twitter.com/kter" target="_blank" class="bg-white bg-opacity-10 rounded-lg p-6 hover:bg-opacity-20 transition-all">
+
+            <a href="https://twitter.com/kter" target="_blank" class="card hover:scale-105 transition-transform">
               <div class="text-2xl mb-2">🐦</div>
-              <h3 class="font-bold mb-2">Twitter</h3>
-              <p class="text-gray-300">@kter</p>
+              <h3 class="font-bold mb-2 text-gray-900">Twitter</h3>
+              <p class="text-gray-600">@kter</p>
             </a>
           </div>
-          
-          <div class="mt-12 text-gray-400">
+
+          <div class="mt-12 text-gray-600">
             <p>お気軽にお声がけください</p>
           </div>
         </div>
@@ -353,5 +353,10 @@ useSeoMeta({
   ogDescription: '魚とお茶と富士山と車と新しいもの好きエンジニア - AWS/Linux インフラエンジニア、Ruby on Rails、JavaScript/PHPの経験があります',
   ogImage: '/profile.jpg',
   twitterCard: 'summary_large_image',
+})
+
+// ページレイアウトの設定
+definePageMeta({
+  layout: 'default'
 })
 </script> 

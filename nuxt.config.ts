@@ -1,10 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-06-02',
-  ssr: false,
+  ssr: true,
   nitro: {
     prerender: {
-      routes: ['/']
+      routes: ['/', '/legal-disclosure']
     },
     output: {
       dir: 'dist'
