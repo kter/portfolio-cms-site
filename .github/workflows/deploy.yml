@@ -39,8 +39,12 @@ jobs:
 
     - name: Deploy to S3
       run: |
-        aws s3 sync dist/public/ s3://www.tomohiko.io --delete --cache-control max-age=31536000,public
+        aws s3 sync .output/public/ s3://www.tomohiko.io --delete --cache-control max-age=31536000,public
+        # Override cache control for HTML files to enable immediate updates
         aws s3 cp s3://www.tomohiko.io/index.html s3://www.tomohiko.io/index.html --metadata-directive REPLACE --cache-control max-age=0,no-cache,no-store,must-revalidate --content-type text/html
+        aws s3 cp s3://www.tomohiko.io/legal-disclosure/index.html s3://www.tomohiko.io/legal-disclosure/index.html --metadata-directive REPLACE --cache-control max-age=0,no-cache,no-store,must-revalidate --content-type text/html
+        aws s3 cp s3://www.tomohiko.io/404.html s3://www.tomohiko.io/404.html --metadata-directive REPLACE --cache-control max-age=0,no-cache,no-store,must-revalidate --content-type text/html
+        aws s3 cp s3://www.tomohiko.io/200.html s3://www.tomohiko.io/200.html --metadata-directive REPLACE --cache-control max-age=0,no-cache,no-store,must-revalidate --content-type text/html
 
     - name: Get CloudFront Distribution ID
       id: get-distribution-id
