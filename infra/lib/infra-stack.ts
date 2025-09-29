@@ -45,6 +45,29 @@ export class InfraStack extends cdk.Stack {
       validation: certificatemanager.CertificateValidation.fromDns(hostedZone),
     });
 
+    // Create CloudFront Function for redirecting non-www to www
+    const redirectFunction = new cloudfront.Function(this, 'RedirectFunction', {
+      code: cloudfront.FunctionCode.fromInline(`
+        function handler(event) {
+          var request = event.request;
+          var host = request.headers.host.value;
+
+          // Redirect non-www to www
+          if (host === 'tomohiko.io') {
+            return {
+              statusCode: 301,
+              statusDescription: 'Moved Permanently',
+              headers: {
+                location: { value: 'https://www.tomohiko.io' + request.uri }
+              }
+            };
+          }
+
+          return request;
+        }
+      `),
+    });
+
     // Create CloudFront distribution
     const distribution = new cloudfront.Distribution(this, 'SiteDistribution', {
       defaultBehavior: {
@@ -53,6 +76,10 @@ export class InfraStack extends cdk.Stack {
         allowedMethods: cloudfront.AllowedMethods.ALLOW_GET_HEAD,
         cachedMethods: cloudfront.CachedMethods.CACHE_GET_HEAD,
         compress: true,
+        functionAssociations: [{
+          function: redirectFunction,
+          eventType: cloudfront.FunctionEventType.VIEWER_REQUEST,
+        }],
       },
       domainNames: ['www.tomohiko.io', 'tomohiko.io'],
       certificate: certificate,
