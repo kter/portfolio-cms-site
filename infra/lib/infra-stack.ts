@@ -45,30 +45,7 @@ export class InfraStack extends cdk.Stack {
       validation: certificatemanager.CertificateValidation.fromDns(hostedZone),
     });
 
-    // Create CloudFront Function for redirecting non-www to www
-    const redirectFunction = new cloudfront.Function(this, 'RedirectFunction', {
-      code: cloudfront.FunctionCode.fromInline(`
-        function handler(event) {
-          var request = event.request;
-          var host = request.headers.host.value;
-
-          // Redirect non-www to www
-          if (host === 'tomohiko.io') {
-            return {
-              statusCode: 301,
-              statusDescription: 'Moved Permanently',
-              headers: {
-                location: { value: 'https://www.tomohiko.io' + request.uri }
-              }
-            };
-          }
-
-          return request;
-        }
-      `),
-    });
-
-    // Create CloudFront distribution
+    // Create CloudFront distribution with S3 static website hosting
     const distribution = new cloudfront.Distribution(this, 'SiteDistribution', {
       defaultBehavior: {
         origin: origins.S3BucketOrigin.withOriginAccessControl(websiteBucket),
@@ -77,7 +54,37 @@ export class InfraStack extends cdk.Stack {
         cachedMethods: cloudfront.CachedMethods.CACHE_GET_HEAD,
         compress: true,
         functionAssociations: [{
-          function: redirectFunction,
+          function: new cloudfront.Function(this, 'RedirectFunction', {
+            code: cloudfront.FunctionCode.fromInline(`
+              function handler(event) {
+                var request = event.request;
+                var uri = request.uri;
+                var host = request.headers.host.value;
+
+                // Redirect non-www to www
+                if (host === 'tomohiko.io') {
+                  return {
+                    statusCode: 301,
+                    statusDescription: 'Moved Permanently',
+                    headers: {
+                      location: { value: 'https://www.tomohiko.io' + uri }
+                    }
+                  };
+                }
+
+                // Check if the URI doesn't have a file extension
+                if (uri.length > 1 && !uri.includes('.') && !uri.endsWith('/')) {
+                  // Append index.html to the URI
+                  request.uri = uri + '/index.html';
+                } else if (uri.endsWith('/')) {
+                  // Append index.html to directory requests
+                  request.uri = uri + 'index.html';
+                }
+
+                return request;
+              }
+            `),
+          }),
           eventType: cloudfront.FunctionEventType.VIEWER_REQUEST,
         }],
       },
@@ -87,8 +94,14 @@ export class InfraStack extends cdk.Stack {
       errorResponses: [
         {
           httpStatus: 404,
-          responseHttpStatus: 200,
-          responsePagePath: '/index.html',
+          responseHttpStatus: 404,
+          responsePagePath: '/404.html',
+          ttl: cdk.Duration.minutes(30),
+        },
+        {
+          httpStatus: 403,
+          responseHttpStatus: 404,
+          responsePagePath: '/404.html',
           ttl: cdk.Duration.minutes(30),
         },
       ],
@@ -156,7 +169,7 @@ export class InfraStack extends cdk.Stack {
       resources: [`arn:aws:cloudfront::${this.account}:distribution/${distribution.distributionId}`],
     }));
 
-    // Add permissions for CloudFormation read operations (to get stack outputs)
+    // Add permissions for CloudFormation operations (to get stack outputs and deploy)
     githubActionsRole.addToPolicy(new iam.PolicyStatement({
       effect: iam.Effect.ALLOW,
       actions: [
@@ -164,8 +177,43 @@ export class InfraStack extends cdk.Stack {
         'cloudformation:DescribeStackResources',
         'cloudformation:DescribeStackEvents',
         'cloudformation:GetTemplate',
+        'cloudformation:UpdateStack',
+        'cloudformation:CreateChangeSet',
+        'cloudformation:DescribeChangeSet',
+        'cloudformation:ExecuteChangeSet',
+        'cloudformation:DeleteChangeSet',
+        'cloudformation:GetStackPolicy',
       ],
       resources: [this.stackId],
+    }));
+
+    // Add permissions for SSM parameter access (required for CDK bootstrap verification)
+    githubActionsRole.addToPolicy(new iam.PolicyStatement({
+      effect: iam.Effect.ALLOW,
+      actions: [
+        'ssm:GetParameter',
+        'ssm:GetParameters',
+      ],
+      resources: [
+        `arn:aws:ssm:${this.region}:${this.account}:parameter/cdk-bootstrap/*`,
+      ],
+    }));
+
+    // Add permissions for CloudFront Function deployment
+    githubActionsRole.addToPolicy(new iam.PolicyStatement({
+      effect: iam.Effect.ALLOW,
+      actions: [
+        'cloudfront:CreateFunction',
+        'cloudfront:UpdateFunction',
+        'cloudfront:DeleteFunction',
+        'cloudfront:DescribeFunction',
+        'cloudfront:GetFunction',
+        'cloudfront:ListFunctions',
+        'cloudfront:UpdateDistribution',
+        'cloudfront:GetDistribution',
+        'cloudfront:GetDistributionConfig',
+      ],
+      resources: ['*'], // CloudFront Functions require wildcard resource
     }));
 
     // Output important values
