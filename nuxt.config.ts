@@ -4,10 +4,12 @@ export default defineNuxtConfig({
   ssr: true,
   nitro: {
     prerender: {
-      routes: ['/', '/legal-disclosure']
+      routes: ['/', '/legal-disclosure'],
+      crawlLinks: true
     },
     output: {
-      dir: 'dist'
+      dir: 'dist',
+      publicDir: 'dist/public'
     }
   },
   app: {
