@@ -3,13 +3,10 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-06-02',
   ssr: true,
   nitro: {
+    preset: 'static',
     prerender: {
       routes: ['/', '/legal-disclosure'],
       crawlLinks: true
-    },
-    output: {
-      dir: 'dist',
-      publicDir: 'dist/public'
     }
   },
   app: {
