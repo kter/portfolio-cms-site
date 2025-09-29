@@ -169,7 +169,7 @@ export class InfraStack extends cdk.Stack {
       resources: [`arn:aws:cloudfront::${this.account}:distribution/${distribution.distributionId}`],
     }));
 
-    // Add permissions for CloudFormation read operations (to get stack outputs)
+    // Add permissions for CloudFormation operations (to get stack outputs and deploy)
     githubActionsRole.addToPolicy(new iam.PolicyStatement({
       effect: iam.Effect.ALLOW,
       actions: [
@@ -177,8 +177,43 @@ export class InfraStack extends cdk.Stack {
         'cloudformation:DescribeStackResources',
         'cloudformation:DescribeStackEvents',
         'cloudformation:GetTemplate',
+        'cloudformation:UpdateStack',
+        'cloudformation:CreateChangeSet',
+        'cloudformation:DescribeChangeSet',
+        'cloudformation:ExecuteChangeSet',
+        'cloudformation:DeleteChangeSet',
+        'cloudformation:GetStackPolicy',
       ],
       resources: [this.stackId],
+    }));
+
+    // Add permissions for SSM parameter access (required for CDK bootstrap verification)
+    githubActionsRole.addToPolicy(new iam.PolicyStatement({
+      effect: iam.Effect.ALLOW,
+      actions: [
+        'ssm:GetParameter',
+        'ssm:GetParameters',
+      ],
+      resources: [
+        `arn:aws:ssm:${this.region}:${this.account}:parameter/cdk-bootstrap/*`,
+      ],
+    }));
+
+    // Add permissions for CloudFront Function deployment
+    githubActionsRole.addToPolicy(new iam.PolicyStatement({
+      effect: iam.Effect.ALLOW,
+      actions: [
+        'cloudfront:CreateFunction',
+        'cloudfront:UpdateFunction',
+        'cloudfront:DeleteFunction',
+        'cloudfront:DescribeFunction',
+        'cloudfront:GetFunction',
+        'cloudfront:ListFunctions',
+        'cloudfront:UpdateDistribution',
+        'cloudfront:GetDistribution',
+        'cloudfront:GetDistributionConfig',
+      ],
+      resources: ['*'], // CloudFront Functions require wildcard resource
     }));
 
     // Output important values
