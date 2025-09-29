@@ -45,7 +45,7 @@ export class InfraStack extends cdk.Stack {
       validation: certificatemanager.CertificateValidation.fromDns(hostedZone),
     });
 
-    // Create CloudFront distribution
+    // Create CloudFront distribution with S3 static website hosting
     const distribution = new cloudfront.Distribution(this, 'SiteDistribution', {
       defaultBehavior: {
         origin: origins.S3BucketOrigin.withOriginAccessControl(websiteBucket),
@@ -53,6 +53,40 @@ export class InfraStack extends cdk.Stack {
         allowedMethods: cloudfront.AllowedMethods.ALLOW_GET_HEAD,
         cachedMethods: cloudfront.CachedMethods.CACHE_GET_HEAD,
         compress: true,
+        functionAssociations: [{
+          function: new cloudfront.Function(this, 'RedirectFunction', {
+            code: cloudfront.FunctionCode.fromInline(`
+              function handler(event) {
+                var request = event.request;
+                var uri = request.uri;
+                var host = request.headers.host.value;
+
+                // Redirect non-www to www
+                if (host === 'tomohiko.io') {
+                  return {
+                    statusCode: 301,
+                    statusDescription: 'Moved Permanently',
+                    headers: {
+                      location: { value: 'https://www.tomohiko.io' + uri }
+                    }
+                  };
+                }
+
+                // Check if the URI doesn't have a file extension
+                if (uri.length > 1 && !uri.includes('.') && !uri.endsWith('/')) {
+                  // Append index.html to the URI
+                  request.uri = uri + '/index.html';
+                } else if (uri.endsWith('/')) {
+                  // Append index.html to directory requests
+                  request.uri = uri + 'index.html';
+                }
+
+                return request;
+              }
+            `),
+          }),
+          eventType: cloudfront.FunctionEventType.VIEWER_REQUEST,
+        }],
       },
       domainNames: ['www.tomohiko.io', 'tomohiko.io'],
       certificate: certificate,
@@ -60,8 +94,14 @@ export class InfraStack extends cdk.Stack {
       errorResponses: [
         {
           httpStatus: 404,
-          responseHttpStatus: 200,
-          responsePagePath: '/index.html',
+          responseHttpStatus: 404,
+          responsePagePath: '/404.html',
+          ttl: cdk.Duration.minutes(30),
+        },
+        {
+          httpStatus: 403,
+          responseHttpStatus: 404,
+          responsePagePath: '/404.html',
           ttl: cdk.Duration.minutes(30),
         },
       ],
