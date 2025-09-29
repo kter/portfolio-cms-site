@@ -1,0 +1,45 @@
+name: Deploy Infrastructure
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - 'infra/**'
+
+# Required for OIDC
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy-infra:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+        cache-dependency-path: 'infra/package-lock.json'
+
+    - name: Install CDK dependencies
+      run: |
+        cd infra
+        npm ci
+
+    - name: Configure AWS credentials using OIDC
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+        role-session-name: GitHubActions-InfrastructureDeploy
+        aws-region: us-east-1
+
+    - name: Deploy CDK stack
+      run: |
+        cd infra
+        npx cdk deploy --require-approval never
