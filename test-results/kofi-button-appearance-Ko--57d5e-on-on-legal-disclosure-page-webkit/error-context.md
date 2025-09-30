@@ -1,0 +1,190 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - main [ref=e4]:
+      - article [ref=e6]:
+        - generic [ref=e7]:
+          - heading "特定商取引法に基づく表記" [level=1] [ref=e8]
+          - paragraph [ref=e9]: Specified Commercial Transaction Act Disclosure
+        - generic [ref=e10]:
+          - heading "事業者情報" [level=2] [ref=e11]
+          - generic [ref=e12]:
+            - generic [ref=e13]:
+              - heading "販売業者の名称" [level=3] [ref=e14]
+              - paragraph [ref=e15]: 高橋智彦
+            - generic [ref=e16]:
+              - heading "運営統括責任者" [level=3] [ref=e17]
+              - paragraph [ref=e18]: 高橋智彦
+        - generic [ref=e19]:
+          - heading "連絡先情報" [level=2] [ref=e20]
+          - generic [ref=e21]:
+            - generic [ref=e22]:
+              - heading "所在地" [level=3] [ref=e23]
+              - paragraph [ref=e25]: 請求があったら遅滞なく開示します
+            - generic [ref=e26]:
+              - heading "電話番号" [level=3] [ref=e27]
+              - generic [ref=e28]:
+                - paragraph [ref=e29]: 請求があったら遅滞なく開示します
+                - paragraph [ref=e30]: 平日 10:00-18:00
+            - generic [ref=e31]:
+              - heading "メールアドレス" [level=3] [ref=e32]
+              - paragraph [ref=e33]:
+                - 'link "メール送信: contact@tomohiko.io" [ref=e34]':
+                  - /url: mailto:contact@tomohiko.io
+                  - text: contact@tomohiko.io
+              - paragraph [ref=e35]: 平日 10:00-18:00（土日祝を除く）
+        - generic [ref=e36]:
+          - heading "追加手数料等の追加料金" [level=2] [ref=e37]
+          - generic [ref=e38]:
+            - generic [ref=e40]:
+              - generic [ref=e41]:
+                - heading "プラットフォーム手数料" [level=3] [ref=e42]
+                - paragraph [ref=e43]: Ko-fi.comプラットフォームの利用に関する手数料はKo-fiの規定に従います。詳細はKo-fi.comをご確認ください。
+              - generic [ref=e44]:
+                - paragraph [ref=e45]: Ko-fi規定に準拠
+                - paragraph [ref=e46]: JPY
+            - generic [ref=e48]:
+              - generic [ref=e49]:
+                - heading "配送料" [level=3] [ref=e50]
+                - paragraph [ref=e51]: デジタルサービス・ポートフォリオサイトのため、物理的な商品の配送は行いません。すべてのサービスはオンラインで提供されます。
+              - generic [ref=e52]:
+                - paragraph [ref=e53]: 実費
+                - paragraph [ref=e54]: JPY
+        - generic [ref=e55]:
+          - heading "返品・交換について" [level=2] [ref=e56]
+          - generic [ref=e57]:
+            - paragraph [ref=e59]: デジタルサービス・コンサルティングサービスの特性をご理解の上、ご契約ください。詳細は個別契約時に説明いたします。
+            - generic [ref=e60]:
+              - generic [ref=e61]:
+                - heading "お客様都合による返品・交換" [level=3] [ref=e62]
+                - generic [ref=e63]:
+                  - generic [ref=e64]:
+                    - term [ref=e65]: 期限
+                    - definition [ref=e66]: 契約成立から7日以内
+                  - generic [ref=e67]:
+                    - term [ref=e68]: 条件
+                    - definition [ref=e69]:
+                      - list [ref=e70]:
+                        - listitem [ref=e71]: デジタルサービス・コンサルティングサービスの場合、サービス開始前に限り可能
+                        - listitem [ref=e72]: 既にサービスが開始された場合は原則として返品・キャンセル不可
+                        - listitem [ref=e73]: 継続契約の場合は契約期間途中でのキャンセルは原則不可
+                  - generic [ref=e74]:
+                    - term [ref=e75]: 費用負担
+                    - definition [ref=e76]: お客様都合によるキャンセルの場合、発生した費用はお客様負担
+                  - generic [ref=e77]:
+                    - term [ref=e78]: 手続き
+                    - definition [ref=e79]: contact@tomohiko.io までメールにてご連絡ください
+              - generic [ref=e80]:
+                - heading "商品・サービスに不備がある場合" [level=3] [ref=e81]
+                - generic [ref=e82]:
+                  - generic [ref=e83]:
+                    - term [ref=e84]: 期限
+                    - definition [ref=e85]: サービス提供後30日以内
+                  - generic [ref=e86]:
+                    - term [ref=e87]: 対象範囲
+                    - definition [ref=e88]: サービス内容が事前の説明と著しく異なる場合、技術的な問題によりサービスが提供できない場合
+                  - generic [ref=e89]:
+                    - term [ref=e90]: 費用負担
+                    - definition [ref=e91]: 当方の責任による場合、返金または代替サービスの提供
+                  - generic [ref=e92]:
+                    - term [ref=e93]: 手続き
+                    - definition [ref=e94]: contact@tomohiko.io までメールにてご連絡いただき、内容を確認の上対応いたします
+        - generic [ref=e95]:
+          - heading "引渡時期・サービス提供時期" [level=2] [ref=e96]
+          - generic [ref=e97]:
+            - generic [ref=e98]:
+              - heading "処理時間" [level=3] [ref=e99]
+              - paragraph [ref=e100]: ご契約成立後即座
+            - generic [ref=e101]:
+              - heading "提供方法" [level=3] [ref=e102]
+              - paragraph [ref=e103]: オンライン（メール、ビデオ会議、オンラインツール等）にて提供
+            - generic [ref=e104]:
+              - heading "提供開始" [level=3] [ref=e105]
+              - paragraph [ref=e106]: サービス提供は契約内容に応じて即座〜数営業日以内に開始
+          - generic [ref=e107]:
+            - heading "特別な条件" [level=3] [ref=e108]
+            - list [ref=e109]:
+              - listitem [ref=e110]: インターネット接続環境が必要
+              - listitem [ref=e111]: ビデオ会議が可能な環境（コンサルティングサービスの場合）
+              - listitem [ref=e112]: 日本時間での対応となります
+        - generic [ref=e113]:
+          - heading "受け付け可能な決済手段・決済期間" [level=2] [ref=e114]
+          - generic [ref=e116]:
+            - heading "Ko-fi（チップ）" [level=3] [ref=e117]
+            - paragraph [ref=e118]: Ko-fi.comプラットフォーム経由でのチップ受け取り
+            - generic [ref=e119]:
+              - generic [ref=e120]:
+                - term [ref=e121]: 処理時期
+                - definition [ref=e122]: Ko-fiでの決済完了後即座
+              - generic [ref=e123]:
+                - term [ref=e124]: 追加手数料
+                - definition [ref=e125]: Ko-fiプラットフォーム手数料が適用される場合があります
+        - generic [ref=e126]:
+          - heading "販売価格・消費税について" [level=2] [ref=e127]
+          - generic [ref=e128]:
+            - generic [ref=e129]:
+              - heading "表示形式" [level=3] [ref=e130]
+              - paragraph [ref=e131]: チップ（任意の金額）
+            - generic [ref=e132]:
+              - heading "消費税" [level=3] [ref=e133]
+              - paragraph [ref=e134]: 税込価格
+            - generic [ref=e135]:
+              - heading "通貨" [level=3] [ref=e136]
+              - paragraph [ref=e137]: JPY
+            - generic [ref=e138]:
+              - heading "価格表示場所" [level=3] [ref=e139]
+              - paragraph [ref=e140]: Ko-fi.comページにて任意の金額をお選びいただけます
+        - generic [ref=e142]:
+          - paragraph [ref=e143]: この表記は特定商取引法第11条に基づく表示です。
+          - paragraph [ref=e144]: ご不明な点がございましたら、上記連絡先までお気軽にお問い合わせください。
+    - contentinfo [ref=e145]:
+      - generic [ref=e146]:
+        - generic [ref=e147]:
+          - generic [ref=e148]:
+            - heading "高橋智彦" [level=3] [ref=e149]
+            - paragraph [ref=e150]: 魚とお茶と富士山と車と新しいもの好きエンジニア
+          - generic [ref=e151]:
+            - heading "Links" [level=3] [ref=e152]
+            - list [ref=e153]:
+              - listitem [ref=e154]:
+                - link "ホーム" [ref=e155]:
+                  - /url: /
+              - listitem [ref=e156]:
+                - link "GitHub" [ref=e157]:
+                  - /url: https://github.com/kter
+              - listitem [ref=e158]:
+                - link "Qiita" [ref=e159]:
+                  - /url: https://qiita.com/kter
+              - listitem [ref=e160]:
+                - link "Contact" [ref=e161]:
+                  - /url: mailto:takahashi@tomohiko.io
+          - generic [ref=e162]:
+            - heading "Legal" [level=3] [ref=e163]
+            - list [ref=e164]:
+              - listitem [ref=e165]:
+                - link "特定商取引法に基づく表記ページへ移動" [ref=e166]:
+                  - /url: /legal-disclosure
+                  - text: 特定商取引法に基づく表記
+        - generic [ref=e168]:
+          - paragraph [ref=e169]: © 2025 高橋智彦 (Takahashi Tomohiko). All rights reserved.
+          - link "通信販売に関する表示事項" [ref=e171]:
+            - /url: /legal-disclosure
+  - generic:
+    - img
+  - generic:
+    - generic:
+      - generic:
+        - button "Go to parent" [disabled]
+        - button "Open in editor"
+        - button "Close"
+  - generic [ref=e172]:
+    - button "Toggle Nuxt DevTools" [ref=e173] [cursor=pointer]:
+      - img [ref=e174] [cursor=pointer]
+    - generic "Page load time" [ref=e177]:
+      - generic [ref=e178]: "37"
+      - generic [ref=e179]: ms
+    - button "Toggle Component Inspector" [ref=e181] [cursor=pointer]:
+      - img [ref=e182] [cursor=pointer]
+```
