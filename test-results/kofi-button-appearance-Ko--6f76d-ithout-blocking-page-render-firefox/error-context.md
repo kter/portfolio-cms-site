@@ -1,0 +1,233 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - main [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - generic [ref=e7]:
+            - img "Background 1" [ref=e9]
+            - img "Background 2" [ref=e11]
+            - img "Background 3" [ref=e13]
+            - img "Background 4" [ref=e15]
+            - img "Background 5" [ref=e17]
+          - generic [ref=e21]:
+            - img "高橋智彦のプロフィール写真" [ref=e23]
+            - heading "高橋智彦のポートフォリオ" [level=1] [ref=e24]
+            - paragraph [ref=e25]: 魚とお茶と富士山と車と新しいもの好きエンジニア
+            - paragraph [ref=e26]: Takahashi Tomohiko
+        - generic [ref=e28]:
+          - heading "Work Experience" [level=2] [ref=e29]
+          - generic [ref=e30]:
+            - generic [ref=e31]:
+              - heading "AWS / Linux インフラエンジニア" [level=3] [ref=e33]
+              - paragraph [ref=e34]: 10年以上
+              - paragraph [ref=e35]: クラウドインフラストラクチャの設計・構築・運用
+            - generic [ref=e36]:
+              - heading "Ruby on Rails バックエンドエンジニア" [level=3] [ref=e38]
+              - paragraph [ref=e39]: 2年
+              - paragraph [ref=e40]: Webアプリケーションのバックエンド開発
+            - generic [ref=e41]:
+              - heading "チームマネジメント" [level=3] [ref=e43]
+              - paragraph [ref=e44]: 3年
+              - paragraph [ref=e45]: SREグループのマネジメント・プロジェクト管理等
+            - generic [ref=e46]:
+              - heading "JavaScript / PHP フルスタックエンジニア" [level=3] [ref=e48]
+              - paragraph [ref=e49]: 3年
+              - paragraph [ref=e50]: jQuery, SCSS / Laravel を用いたフロント・バックエンド開発
+          - paragraph [ref=e52]: 詳しい経験は個別に返信させていただいております。ご連絡お待ちしております。
+        - generic [ref=e54]:
+          - heading "Links" [level=2] [ref=e55]
+          - generic [ref=e56]:
+            - link "Q Qiita 技術記事" [ref=e57] [cursor=pointer]:
+              - /url: https://qiita.com/kter
+              - generic [ref=e58] [cursor=pointer]:
+                - generic [ref=e59] [cursor=pointer]: Q
+                - generic [ref=e60] [cursor=pointer]:
+                  - heading "Qiita" [level=3] [ref=e61] [cursor=pointer]
+                  - paragraph [ref=e62] [cursor=pointer]: 技術記事
+            - link "G GitHub ソースコード" [ref=e63] [cursor=pointer]:
+              - /url: https://github.com/kter
+              - generic [ref=e64] [cursor=pointer]:
+                - generic [ref=e65] [cursor=pointer]: G
+                - generic [ref=e66] [cursor=pointer]:
+                  - heading "GitHub" [level=3] [ref=e67] [cursor=pointer]
+                  - paragraph [ref=e68] [cursor=pointer]: ソースコード
+            - link "S SlideShare プレゼンテーション" [ref=e69] [cursor=pointer]:
+              - /url: https://www.slideshare.net/tomohicotakahashi
+              - generic [ref=e70] [cursor=pointer]:
+                - generic [ref=e71] [cursor=pointer]: S
+                - generic [ref=e72] [cursor=pointer]:
+                  - heading "SlideShare" [level=3] [ref=e73] [cursor=pointer]
+                  - paragraph [ref=e74] [cursor=pointer]: プレゼンテーション
+            - link "L LinkedIn プロフィール" [ref=e75] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/ttakahashi0806/
+              - generic [ref=e76] [cursor=pointer]:
+                - generic [ref=e77] [cursor=pointer]: L
+                - generic [ref=e78] [cursor=pointer]:
+                  - heading "LinkedIn" [level=3] [ref=e79] [cursor=pointer]
+                  - paragraph [ref=e80] [cursor=pointer]: プロフィール
+            - link "B Blog 個人ブログ" [ref=e81] [cursor=pointer]:
+              - /url: https://blog.tomohiko.io/
+              - generic [ref=e82] [cursor=pointer]:
+                - generic [ref=e83] [cursor=pointer]: B
+                - generic [ref=e84] [cursor=pointer]:
+                  - heading "Blog" [level=3] [ref=e85] [cursor=pointer]
+                  - paragraph [ref=e86] [cursor=pointer]: 個人ブログ
+        - generic [ref=e88]:
+          - heading "自作サービス" [level=2] [ref=e89]
+          - generic [ref=e90]:
+            - link "AWS アイコンクイズ AWSサービスのアイコンを覚えるクイズアプリ" [ref=e91] [cursor=pointer]:
+              - /url: https://aws-icon-quiz.tomohiko.io/
+              - heading "AWS アイコンクイズ" [level=3] [ref=e93] [cursor=pointer]
+              - paragraph [ref=e94] [cursor=pointer]: AWSサービスのアイコンを覚えるクイズアプリ
+            - link "開発者ツール（仮） 開発者向け開発効率向上化ツール" [ref=e95] [cursor=pointer]:
+              - /url: https://devtools.site/
+              - heading "開発者ツール（仮）" [level=3] [ref=e97] [cursor=pointer]
+              - paragraph [ref=e98] [cursor=pointer]: 開発者向け開発効率向上化ツール
+            - generic [ref=e99]:
+              - generic [ref=e101]:
+                - heading "一日一善" [level=3] [ref=e102]
+                - generic [ref=e103]: 運用終了
+              - paragraph [ref=e104]: 日々の良い行いを記録するアプリ
+            - generic [ref=e105]:
+              - generic [ref=e107]:
+                - heading "ｼﾝｶﾝｾﾝｽｺﾞｸｶﾀｲｱｲｽbot" [level=3] [ref=e108]
+                - generic [ref=e109]: 運用終了
+              - paragraph [ref=e110]: 新幹線のカタイアイスを紹介するTwitter Bot
+        - generic [ref=e112]:
+          - heading "Certifications" [level=2] [ref=e113]
+          - generic [ref=e114]:
+            - generic [ref=e115]:
+              - generic [ref=e116]:
+                - heading "国家資格" [level=3] [ref=e117]
+                - list [ref=e118]:
+                  - listitem [ref=e119]: • 基本情報技術者
+                  - listitem [ref=e120]: • 応用情報技術者
+              - generic [ref=e121]:
+                - heading "AWS認定資格 - FOUNDATIONAL (2資格)" [level=3] [ref=e122]:
+                  - text: AWS認定資格 - FOUNDATIONAL
+                  - generic [ref=e123]: (2資格)
+                - list [ref=e124]:
+                  - listitem [ref=e125]:
+                    - img "Cloud Practitioner" [ref=e126]
+                    - generic [ref=e127]: Cloud Practitioner
+                  - listitem [ref=e128]:
+                    - img "AI Practitioner" [ref=e129]
+                    - generic [ref=e130]: AI Practitioner (Early Adopter)
+            - generic [ref=e132]:
+              - heading "AWS認定資格 - ASSOCIATE (5資格)" [level=3] [ref=e133]:
+                - text: AWS認定資格 - ASSOCIATE
+                - generic [ref=e134]: (5資格)
+              - generic [ref=e135]:
+                - list [ref=e136]:
+                  - listitem [ref=e137]:
+                    - img "Solutions Architect Associate" [ref=e138]
+                    - generic [ref=e139]: Solutions Architect - Associate
+                  - listitem [ref=e140]:
+                    - img "Developer Associate" [ref=e141]
+                    - generic [ref=e142]: Developer - Associate
+                  - listitem [ref=e143]:
+                    - img "SysOps Administrator Associate" [ref=e144]
+                    - generic [ref=e145]: SysOps Administrator - Associate
+                - list [ref=e146]:
+                  - listitem [ref=e147]:
+                    - img "Data Engineer Associate" [ref=e148]
+                    - generic [ref=e149]: Data Engineer - Associate
+                  - listitem [ref=e150]:
+                    - img "Machine Learning Engineer Associate" [ref=e151]
+                    - generic [ref=e152]: Machine Learning Engineer - Associate
+            - generic [ref=e153]:
+              - generic [ref=e154]:
+                - heading "AWS認定資格 - PROFESSIONAL (2資格)" [level=3] [ref=e155]:
+                  - text: AWS認定資格 - PROFESSIONAL
+                  - generic [ref=e156]: (2資格)
+                - list [ref=e157]:
+                  - listitem [ref=e158]:
+                    - img "Solutions Architect Professional" [ref=e159]
+                    - generic [ref=e160]: Solutions Architect - Professional
+                  - listitem [ref=e161]:
+                    - img "DevOps Engineer Professional" [ref=e162]
+                    - generic [ref=e163]: DevOps Engineer - Professional
+              - generic [ref=e164]:
+                - heading "AWS認定資格 - SPECIALTY (4資格)" [level=3] [ref=e165]:
+                  - text: AWS認定資格 - SPECIALTY
+                  - generic [ref=e166]: (4資格)
+                - list [ref=e167]:
+                  - listitem [ref=e168]:
+                    - img "Security Specialty" [ref=e169]
+                    - generic [ref=e170]: Security – Specialty
+                  - listitem [ref=e171]:
+                    - img "Advanced Networking Specialty" [ref=e172]
+                    - generic [ref=e173]: Advanced Networking – Specialty
+                  - listitem [ref=e174]:
+                    - img "Database Specialty" [ref=e175]
+                    - generic [ref=e176]: Database – Specialty
+                  - listitem [ref=e177]:
+                    - img "Machine Learning Specialty" [ref=e178]
+                    - generic [ref=e179]: Machine Learning – Specialty
+        - generic [ref=e181]:
+          - heading "Contact Me" [level=2] [ref=e182]
+          - generic [ref=e183]:
+            - generic [ref=e184]:
+              - link "✉️ Email takahashi@tomohiko.io" [ref=e185] [cursor=pointer]:
+                - /url: mailto:takahashi@tomohiko.io
+                - generic [ref=e186] [cursor=pointer]: ✉️
+                - heading "Email" [level=3] [ref=e187] [cursor=pointer]
+                - paragraph [ref=e188] [cursor=pointer]: takahashi@tomohiko.io
+              - link "🐦 Twitter @kter" [ref=e189] [cursor=pointer]:
+                - /url: https://twitter.com/kter
+                - generic [ref=e190] [cursor=pointer]: 🐦
+                - heading "Twitter" [level=3] [ref=e191] [cursor=pointer]
+                - paragraph [ref=e192] [cursor=pointer]: "@kter"
+            - paragraph [ref=e194]: お気軽にお声がけください
+    - contentinfo [ref=e195]:
+      - generic [ref=e196]:
+        - generic [ref=e197]:
+          - generic [ref=e198]:
+            - heading "高橋智彦" [level=3] [ref=e199]
+            - paragraph [ref=e200]: 魚とお茶と富士山と車と新しいもの好きエンジニア
+          - generic [ref=e201]:
+            - heading "Links" [level=3] [ref=e202]
+            - list [ref=e203]:
+              - listitem [ref=e204]:
+                - link "ホーム" [ref=e205] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=e206]:
+                - link "GitHub" [ref=e207] [cursor=pointer]:
+                  - /url: https://github.com/kter
+              - listitem [ref=e208]:
+                - link "Qiita" [ref=e209] [cursor=pointer]:
+                  - /url: https://qiita.com/kter
+              - listitem [ref=e210]:
+                - link "Contact" [ref=e211] [cursor=pointer]:
+                  - /url: mailto:takahashi@tomohiko.io
+          - generic [ref=e212]:
+            - heading "Legal" [level=3] [ref=e213]
+            - list [ref=e214]:
+              - listitem [ref=e215]:
+                - link "特定商取引法に基づく表記ページへ移動" [ref=e216] [cursor=pointer]:
+                  - /url: /legal-disclosure
+                  - text: 特定商取引法に基づく表記
+        - generic [ref=e218]:
+          - paragraph [ref=e219]: © 2025 高橋智彦 (Takahashi Tomohiko). All rights reserved.
+          - link "通信販売に関する表示事項" [ref=e221] [cursor=pointer]:
+            - /url: /legal-disclosure
+  - generic:
+    - img
+  - generic:
+    - generic:
+      - generic:
+        - button "Go to parent" [disabled]
+        - button "Open in editor"
+        - button "Close"
+  - generic [ref=e222]:
+    - button "Toggle Nuxt DevTools" [ref=e223] [cursor=pointer]:
+      - img [ref=e224] [cursor=pointer]
+    - generic "Page load time" [ref=e227]:
+      - generic [ref=e228]: "39"
+      - generic [ref=e229]: ms
+    - button "Toggle Component Inspector" [ref=e231] [cursor=pointer]:
+      - img [ref=e232] [cursor=pointer]
+```
