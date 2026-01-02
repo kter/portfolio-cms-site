@@ -158,7 +158,7 @@
           
           <a href="https://devtools.site/" target="_blank" class="card hover:scale-105 transition-transform">
             <div class="h-2 bg-indigo-400 rounded-t-lg -mt-6 -mx-6 mb-6"></div>
-            <h3 class="text-xl font-bold text-gray-900 mb-4">開発者ツール（仮）</h3>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">DevTools</h3>
             <p class="text-gray-600">開発者向け開発効率向上化ツール</p>
           </a>
           
@@ -179,6 +179,12 @@
             </div>
             <p class="text-gray-600 line-through">新幹線のカタイアイスを紹介するTwitter Bot</p>
           </div>
+          
+          <a href="https://notes.devtools.site/" target="_blank" class="card hover:scale-105 transition-transform">
+            <div class="h-2 bg-indigo-400 rounded-t-lg -mt-6 -mx-6 mb-6"></div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">AI Notes</h3>
+            <p class="text-gray-600">AI メモ管理サービス</p>
+          </a>
         </div>
       </div>
     </section>
